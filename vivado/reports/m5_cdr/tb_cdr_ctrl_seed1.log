@@ -1,0 +1,73 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Aug 25 20:31:07 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snap_tb_cdr_ctrl/xsim_script.tcl
+# xsim {snap_tb_cdr_ctrl} -testplusarg SEED=1 -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+TEST 1:                       T01:immediate_lock PASS
+TEST 2:                         T02:delayed_lock PASS
+TEST 3:                T03:chatter_not_qualified PASS
+WARNING: 2865ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+WARNING: 2875ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+WARNING: 4895ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+WARNING: 4905ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+TEST 4:             T03:chatter_eventually_fails PASS
+WARNING: 9045ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+WARNING: 9055ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+WARNING: 11075ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+WARNING: 11085ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+TEST 5:                        T04:no_lock_fails PASS
+TEST 6:                            T04:tmo_count PASS
+TEST 7:                        T05:loss_detected PASS
+TEST 8:                      T05:freeze_asserted PASS
+WARNING: 13325ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+WARNING: 13335ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+TEST 9:                           T05:reacquired PASS
+WARNING: 13625ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+WARNING: 13635ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+WARNING: 15655ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+WARNING: 15665ns : Multiple conditions true
+	 condition at line:97 conflicts with condtion at line:92
+	 for unique case from File:/home/peter/Desktop/serdes/rtl/cdr_ctrl/cdr_ctrl.sv:91
+TEST 10:                T06:persistent_loss_fails PASS
+TEST 11:                        T07:restart_works PASS
+----------------------------------------------
+COVERAGE lock_events=6 loss_events=2 tmo=3 reacq=0
+REGRESSION_RESULT PASS (11 checks)
+$finish called at time : 17765 ns : File "/home/peter/Desktop/serdes/verification/tb/tb_cdr_ctrl.sv" Line 112
+exit
+INFO: xsimkernel Simulation Memory Usage: 289720 KB (Peak: 338280 KB), Simulation CPU Usage: 1760 ms
+INFO: [Common 17-206] Exiting xsim at Tue Aug 25 20:31:11 2026...

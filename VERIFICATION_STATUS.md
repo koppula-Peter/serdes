@@ -31,6 +31,22 @@ All paths relative to repository root.
 5. Model: orphaned pending response blocked `cmd_ready`; contract corrected to
    cancel-on-new-accept (single outstanding response).
 
+## Milestone M4 — SerDes Supervisor (rtl/serdes_ctrl)
+
+| Gate item | Status | Evidence |
+|---|---|---|
+| xsim unit TB (T01–T07: init, ID-fault, buserr-retry, PLL/CDR timeout faults, loss→recovery→retrain-exhaustion, SAFE restart) | **PASS** — 37 checks × seeds 1/42/2026 | vivado/reports/m4_supervisor/*.log |
+| Verilator lint | PASS | tools/lint.sh |
+| SVA (bounded waits, no-PHY-access-in-SAFE, fault-has-reason) | PASS (in-run) | logs above |
+
+## Milestone M5 — CDR Controller (rtl/cdr_ctrl)
+
+| Gate item | Status | Evidence |
+|---|---|---|
+| xsim unit TB (immediate/delayed/unstable/no-lock/loss+reacq/repeat-fail/restart per plan) | **PASS** — 11 checks × seeds 1/42/2026 | vivado/reports/m5_cdr/*.log |
+| Verilator lint | PASS | tools/lint.sh |
+| Bounded-acquire SVA | PASS | in-run |
+
 ## Prior milestones
 
 | Item | Status | Evidence |

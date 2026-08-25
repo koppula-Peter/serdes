@@ -1,0 +1,497 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Aug 25 20:30:51 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snap_tb_serdes_supervisor/xsim_script.tcl
+# xsim {snap_tb_serdes_supervisor} -testplusarg SEED=42 -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+[TB] serdes_supervisor regression start
+
+Time: 685 ns Started: 685 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 685 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+TEST 1:                     T01:init_reaches_MONITOR PASS
+TEST 2:                               T01:ev_link_up PASS
+TEST 3:                             T01:ev_init_done PASS
+TEST 4:                                T01:link_up_o PASS
+TEST 5:                       T01:phy_reset_released PASS
+TEST 6:                                T01:no_faults PASS
+TEST 7:                           T01:stable_MONITOR PASS
+
+Time: 3365 ns Started: 3365 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:528
+Error: supervisor: fault without reason
+Time: 3365 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 530
+TEST 8:                               reach_state_19 PASS
+TEST 9:                                T02:reason_ID PASS
+TEST 10:                     T02:fail_state_DISCOVERY PASS
+TEST 11:                            T02:ev_fault_seen PASS
+TEST 12:                          T02:safe_resets_phy PASS
+
+Time: 4235 ns Started: 4235 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 4235 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+TEST 13:                               reach_state_13 PASS
+TEST 14:                       T03:recovered_to_READY PASS
+TEST 15:                           T03:one_init_retry PASS
+TEST 16:                                 T03:no_fault PASS
+
+Time: 4985 ns Started: 4985 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 4985 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 4995 ns Started: 4995 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 4995 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5005 ns Started: 5005 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5005 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5015 ns Started: 5015 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5015 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5025 ns Started: 5025 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5025 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5035 ns Started: 5035 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5035 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5045 ns Started: 5045 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5045 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5055 ns Started: 5055 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5055 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5065 ns Started: 5065 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5065 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5075 ns Started: 5075 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5075 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5085 ns Started: 5085 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5085 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5095 ns Started: 5095 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5095 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5105 ns Started: 5105 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5105 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5115 ns Started: 5115 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5115 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5125 ns Started: 5125 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5125 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5135 ns Started: 5135 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5135 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5145 ns Started: 5145 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5145 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5155 ns Started: 5155 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5155 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5165 ns Started: 5165 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5165 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5175 ns Started: 5175 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5175 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5185 ns Started: 5185 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5185 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5195 ns Started: 5195 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5195 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5205 ns Started: 5205 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5205 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5215 ns Started: 5215 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5215 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5225 ns Started: 5225 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5225 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5235 ns Started: 5235 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5235 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5245 ns Started: 5245 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5245 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5255 ns Started: 5255 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5255 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5265 ns Started: 5265 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5265 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5275 ns Started: 5275 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5275 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5285 ns Started: 5285 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5285 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5295 ns Started: 5295 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5295 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5305 ns Started: 5305 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5305 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5315 ns Started: 5315 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5315 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5325 ns Started: 5325 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5325 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5335 ns Started: 5335 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5335 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5345 ns Started: 5345 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5345 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5355 ns Started: 5355 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5355 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5365 ns Started: 5365 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5365 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5375 ns Started: 5375 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5375 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5385 ns Started: 5385 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5385 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5395 ns Started: 5395 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5395 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5405 ns Started: 5405 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5405 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5415 ns Started: 5415 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5415 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5425 ns Started: 5425 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5425 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5435 ns Started: 5435 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5435 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5445 ns Started: 5445 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5445 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5455 ns Started: 5455 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5455 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5465 ns Started: 5465 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5465 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 5475 ns Started: 5475 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 5475 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7225 ns Started: 7225 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7225 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7235 ns Started: 7235 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7235 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7245 ns Started: 7245 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7245 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7255 ns Started: 7255 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7255 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7265 ns Started: 7265 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7265 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7275 ns Started: 7275 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7275 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7285 ns Started: 7285 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7285 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7295 ns Started: 7295 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7295 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7305 ns Started: 7305 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7305 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7315 ns Started: 7315 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7315 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7325 ns Started: 7325 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7325 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7335 ns Started: 7335 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7335 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7345 ns Started: 7345 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7345 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7355 ns Started: 7355 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7355 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7365 ns Started: 7365 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7365 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7375 ns Started: 7375 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7375 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7385 ns Started: 7385 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7385 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7395 ns Started: 7395 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7395 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7405 ns Started: 7405 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7405 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7415 ns Started: 7415 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7415 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7425 ns Started: 7425 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7425 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7435 ns Started: 7435 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7435 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7445 ns Started: 7445 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7445 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7455 ns Started: 7455 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7455 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7465 ns Started: 7465 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7465 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7475 ns Started: 7475 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7475 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7485 ns Started: 7485 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7485 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7495 ns Started: 7495 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7495 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7505 ns Started: 7505 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7505 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7515 ns Started: 7515 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7515 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7525 ns Started: 7525 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7525 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7535 ns Started: 7535 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7535 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7545 ns Started: 7545 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7545 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7555 ns Started: 7555 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7555 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7565 ns Started: 7565 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7565 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7575 ns Started: 7575 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7575 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7585 ns Started: 7585 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7585 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7595 ns Started: 7595 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7595 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7605 ns Started: 7605 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7605 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7615 ns Started: 7615 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7615 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7625 ns Started: 7625 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7625 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7635 ns Started: 7635 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7635 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7645 ns Started: 7645 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7645 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7655 ns Started: 7655 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7655 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7665 ns Started: 7665 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7665 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7675 ns Started: 7675 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7675 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7685 ns Started: 7685 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7685 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7695 ns Started: 7695 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7695 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7705 ns Started: 7705 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7705 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 7715 ns Started: 7715 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 7715 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 9225 ns Started: 9225 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:528
+Error: supervisor: fault without reason
+Time: 9225 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 530
+TEST 17:                               reach_state_19 PASS
+TEST 18:                           T04:reason_PLL_TMO PASS
+TEST 19:                           T04:one_init_retry PASS
+TEST 20:                            T04:fault_counted PASS
+
+Time: 9975 ns Started: 9975 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 9975 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+
+Time: 12395 ns Started: 12395 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:528
+Error: supervisor: fault without reason
+Time: 12395 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 530
+TEST 21:                               reach_state_19 PASS
+TEST 22:                           T05:reason_CDR_TMO PASS
+TEST 23:                            T05:one_cdr_retry PASS
+TEST 24:                            T05:fault_counted PASS
+
+Time: 13145 ns Started: 13145 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 13145 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+TEST 25:                               reach_state_14 PASS
+TEST 26:                           T06:up_before_loss PASS
+
+Time: 13555 ns Started: 13555 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 13555 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+TEST 27:                               reach_state_14 PASS
+TEST 28:                           T06:recovered_once PASS
+TEST 29:                            T06:link_restored PASS
+TEST 30:                  T06:down_and_second_up_seen PASS
+
+Time: 13835 ns Started: 13835 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:528
+Error: supervisor: fault without reason
+Time: 13835 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 530
+TEST 31:                               reach_state_19 PASS
+TEST 32:                          T06:reason_RETR_EXH PASS
+TEST 33:                           T06:retrain_budget PASS
+TEST 34:                         T06:two_faults_total PASS
+
+Time: 14445 ns Started: 14445 ns Scope: /tb_serdes_supervisor/dut File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line:522
+Error: supervisor: unbounded wait
+Time: 14445 ns  Iteration: 2  Process: /tb_serdes_supervisor/dut//tb_serdes_supervisor/dut  Scope: tb_serdes_supervisor.dut  File: /home/peter/Desktop/serdes/rtl/serdes_ctrl/serdes_supervisor.sv Line: 524
+TEST 35:                               reach_state_13 PASS
+TEST 36:                        T07:reinit_after_safe PASS
+TEST 37:                          T07:budgets_cleared PASS
+----------------------------------------------
+REGRESSION_RESULT PASS (37 checks)
+$finish called at time : 14495 ns : File "/home/peter/Desktop/serdes/verification/tb/tb_serdes_supervisor.sv" Line 279
+exit
+INFO: xsimkernel Simulation Memory Usage: 293900 KB (Peak: 338360 KB), Simulation CPU Usage: 1760 ms
+INFO: [Common 17-206] Exiting xsim at Tue Aug 25 20:30:55 2026...

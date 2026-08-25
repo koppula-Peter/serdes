@@ -14,6 +14,15 @@ All notable changes. Format based on Keep a Changelog; versioning SemVer.
 - scripts/run_regression.sh, tools/lint.sh
 - vivado/scripts/synth_ooc.tcl (+ project scripts skeleton)
 
+## [0.2.0] - 2026-08-25
+### Added
+- rtl/serdes_ctrl/serdes_supervisor.sv — global FSM (frozen SUP_* encodings),
+  init sequencing via engine client slot, bounded retries, DEGRADED/RECOVERY/
+  FAULT/SAFE paths, event pulses + telemetry; unit TB T01–T07
+- rtl/cdr_ctrl/cdr_ctrl.sv — CDR lock policy engine (qualify/debounce/reacquire,
+  restart delay, adapt-freeze hook, signal-detect gating); unit TB 7 scenarios
+- Regression now runs all unit TBs across seeds {1,42,2026} in one command
+
 ## [0.1.1] - 2026-08-25
 ### Fixed
 - phy_xact_core: drive cnt_*/fault_* telemetry ports and top last_owner (were undriven)

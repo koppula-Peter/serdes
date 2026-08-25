@@ -8,8 +8,8 @@
 | Field | Value |
 |---|---|
 | Repo | `/home/peter/Desktop/serdes` → `github.com/koppula-Peter/serdes` (private), branch `main` |
-| Milestone now | **M4 SerDes Supervisor** — RTL lint-clean, unit TB RED, mid-debug |
-| Immediate next action | Rebuild & rerun M4 sim, read `[RSP]` trace lines: compare returned `rd` vs `A501`. Suspects: engine rdata path / executor capture timing. Then fix, get T01–T07 green, strip `[SUP]`/`[RSP]` temp traces |
+| Milestone now | **M5 done; next = M6 TX Pre-emphasis** (M4/M5 gated green) |
+| Immediate next action | M6 `rtl/tx_eq/txeq_ctrl.sv`: bounds-limited sweep over TX preset reg via engine client; candidate apply→dwell→metric-read→keep-best→rollback; TB covers limits/sweep/converge/bad-metric |
 | Env quirks | xsim needs `LD_LIBRARY_PATH=/tmp/opencode/ncurses5-shim` (host lacks libncurses.so.5). Vivado settings: `/home/peter/Desktop/xilinx_tools/2025.2/Vivado/settings64.sh`. Keep sim scratch OUT of repo: build in `/tmp/opencode/sim/` with absolute source paths |
 | Commands | Lint: `./tools/lint.sh` · Full gate: `NCURSES5_SHIM=/tmp/opencode/ncurses5-shim ./scripts/run_regression.sh` · Quick status: `./scripts/status.sh` |
 | Sim file list | pkg + rtl/phy_if/{arbiter,core,top} + rtl/serdes_ctrl/serdes_supervisor.sv + models/phy_backend_sim_model.sv + tb/tb_serdes_supervisor.sv |
@@ -23,8 +23,8 @@
 | M2 Architecture set | ✅ DONE | docs/SYSTEM_ARCHITECTURE.md et al. |
 | M3 PHY Register Interface | ✅ **GATED GREEN** | xsim 104/104 ×seeds{1,42,2026}; lint clean; OOC xc7z020 @100MHz WNS +2.933ns; vivado/reports/m3_phyif/ |
 | **M4 SerDes Supervisor** | 🔨 IN PROGRESS (~80%) | RTL done+linted; TB T01–T07 written; debug: init hits FAULT(ID) at DISCOVERY despite preload |
-| M5 CDR Controller | ⬜ NEXT after M4 | plan §12 states; tests: immediate/delayed/unstable/no-lock/loss/reacq/repeat-fail |
-| M6 TX Pre-emphasis | ⬜ | bounds/sweep/converge/bad-metric |
+ plan §12 states; tests: immediate/delayed/unstable/no-lock/loss/reacq/repeat-fail |
+| **M6 TX Pre-emphasis** | ⬜ NEXT | bounds/sweep/converge/bad-metric |
 | M7 RX Equalization | ⬜ | capability-gated CTLE/DFE/adapt |
 | M8 EQ Coordinator | ⬜ | joint search, multi-channel model |
 | M9 Link Training | ⬜ | TRAIN FSM + failure matrix |

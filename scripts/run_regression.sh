@@ -53,7 +53,7 @@ SRC="$ROOT/rtl/common/serdes_phy_ctrl_pkg.sv \
   $ROOT/verification/tb/tb_cdr_ctrl.sv"
 SRCS_EXTRA=""
 
-TBS="${TBS:-tb_phy_xact_engine tb_serdes_supervisor}"
+TBS="${TBS:-tb_phy_xact_engine tb_serdes_supervisor tb_cdr_ctrl}"
 
 ( cd "$WORK" && xvlog -sv $SRC $SRCS_EXTRA > "$OUT/xvlog.log" 2>&1 ) \
   || { echo "   compile FAIL"; tail -5 "$OUT/xvlog.log"; exit 3; }
