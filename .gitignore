@@ -1,0 +1,17 @@
+# Vivado batch-run products
+*.jou
+vivado*.log
+vivado*.str
+vivado_backup*/
+Xil/
+webtalk*
+# xsim / xvlog / xelab products
+xsim.dir/
+xvlog.pb
+xelab.pb
+*.wdb
+# simulator scratch
+verification/regressions/latest/
+# editor noise
+*.swp
+*~
