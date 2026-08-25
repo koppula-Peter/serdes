@@ -4,6 +4,7 @@
 // Requirement refs: ARC-REQ-001/002, PHYIF family (docs/PRODUCT_REQUIREMENTS.md)
 // -----------------------------------------------------------------------------
 package serdes_phy_ctrl_pkg;
+/* verilator lint_off UNUSEDPARAM */
 
   // Default geometry (overridable per module parameter)
   localparam int unsigned DEF_ADDR_W   = 16;
@@ -66,4 +67,5 @@ package serdes_phy_ctrl_pkg;
   localparam sup_state_t SUP_FAULT          = 5'd18;
   localparam sup_state_t SUP_SAFE_STATE     = 5'd19;
 
+/* verilator lint_on UNUSEDPARAM */
 endpackage : serdes_phy_ctrl_pkg

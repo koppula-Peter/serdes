@@ -178,7 +178,9 @@ module phy_xact_engine_top #(
     .cnt_err         (cnt_err),
     .cnt_timeout     (cnt_timeout),
     .cnt_retry       (cnt_retry),
+    /* verilator lint_off PINCONNECTEMPTY */
     .dbg_ts          (),
+    /* verilator lint_on PINCONNECTEMPTY */
     .dbg_state       (dbg_state)
   );
 
@@ -207,6 +209,7 @@ module phy_xact_engine_top #(
 
   assign busy        = (dbg_state != 3'd0);
   assign last_status = last_status_q;
+  assign last_owner  = last_owner_q;
 
 `ifndef SYNTHESIS
   a_no_grant_when_busy: assert property (@(posedge clk) disable iff (!rst_n)

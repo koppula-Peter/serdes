@@ -17,7 +17,7 @@ module phy_arbiter #(
   input  wire logic rst_n,
 
   input  wire logic [CLIENTS-1:0] req_valid,
-  output wire logic [CLIENTS-1:0] req_ready,
+  output logic      [CLIENTS-1:0] req_ready,
 
   input  wire logic core_accept_ready,
 
@@ -33,17 +33,22 @@ module phy_arbiter #(
   logic          grant_v;
   logic [IW-1:0] grant_i;
 
+  // round-robin index at priority distance p from pointer (automatic: no state)
+  function automatic logic [IW-1:0] rr_index(input int unsigned p,
+                                             input logic [IW-1:0] ptr);
+    return IW'((p + int'(ptr)) % CLIENTS);
+  endfunction
+
   always_comb begin
     grant_v = 1'b0;
     grant_i = '0;
     if (core_accept_ready) begin
       // ascending priority distance from round-robin pointer
       for (int p = 0; p < CLIENTS; p++) begin
-        int unsigned idx;
-        idx = ((unsigned'(rr_ptr_q)) + unsigned'(p)) % CLIENTS;
-        if (!grant_v && req_valid[idx] && (!lock_en || (IW'(idx) == lock_client))) begin
+        if (!grant_v && req_valid[rr_index(p, rr_ptr_q)] &&
+            (!lock_en || (rr_index(p, rr_ptr_q) == lock_client))) begin
           grant_v = 1'b1;
-          grant_i = IW'(idx);
+          grant_i = rr_index(p, rr_ptr_q);
         end
       end
     end

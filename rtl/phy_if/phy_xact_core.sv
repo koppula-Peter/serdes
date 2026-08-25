@@ -50,7 +50,7 @@ module phy_xact_core #(
 
   output wire logic              be_cmd_valid,
   input  wire logic              be_cmd_ready,
-  output wire logic [1:0]        be_op,
+  output logic      [1:0]        be_op,
   output wire logic [ADDR_W-1:0] be_addr,
   output wire logic [DATA_W-1:0] be_wdata,
   output wire logic [STRB_W-1:0] be_wstrb,
@@ -157,6 +157,16 @@ module phy_xact_core #(
   assign x_rdata   = rdata_q;
   assign dbg_ts    = ts_q;
   assign dbg_state = state_q;
+
+  assign fault_first   = ffault_q;
+  assign fault_last    = lfault_q;
+  assign fault_first_v = ffault_v_q;
+  assign fault_last_v  = lfault_v_q;
+  assign cnt_total     = c_total_q;
+  assign cnt_ok        = c_ok_q;
+  assign cnt_err       = c_err_q;
+  assign cnt_timeout   = c_tmo_q;
+  assign cnt_retry     = c_rty_q;
 
   // ---------------------------------------------------------------------
   // outcome decode (combinational)
