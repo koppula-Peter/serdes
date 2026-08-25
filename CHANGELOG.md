@@ -14,6 +14,12 @@ All notable changes. Format based on Keep a Changelog; versioning SemVer.
 - scripts/run_regression.sh, tools/lint.sh
 - vivado/scripts/synth_ooc.tcl (+ project scripts skeleton)
 
+## [0.3.0] - 2026-08-25
+### Added
+- rtl/tx_eq/txeq_ctrl.sv — bounded exhaustive TX cursor sweep via engine client:
+  apply→dwell→metric-read, keep-best with perfect-metric early exit,
+  last-known-good rollback on transport failure; unit TB 11 checks ×3 seeds
+
 ## [0.2.0] - 2026-08-25
 ### Added
 - rtl/serdes_ctrl/serdes_supervisor.sv — global FSM (frozen SUP_* encodings),

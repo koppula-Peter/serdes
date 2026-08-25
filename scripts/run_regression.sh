@@ -47,13 +47,15 @@ SRC="$ROOT/rtl/common/serdes_phy_ctrl_pkg.sv \
   $ROOT/rtl/phy_if/phy_xact_engine_top.sv \
   $ROOT/rtl/serdes_ctrl/serdes_supervisor.sv \
   $ROOT/rtl/cdr_ctrl/cdr_ctrl.sv \
+  $ROOT/rtl/tx_eq/txeq_ctrl.sv \
   $ROOT/verification/models/phy_backend_sim_model.sv \
   $ROOT/verification/tb/tb_phy_xact_engine.sv \
   $ROOT/verification/tb/tb_serdes_supervisor.sv \
-  $ROOT/verification/tb/tb_cdr_ctrl.sv"
+  $ROOT/verification/tb/tb_cdr_ctrl.sv \
+  $ROOT/verification/tb/tb_txeq_ctrl.sv"
 SRCS_EXTRA=""
 
-TBS="${TBS:-tb_phy_xact_engine tb_serdes_supervisor tb_cdr_ctrl}"
+TBS="${TBS:-tb_phy_xact_engine tb_serdes_supervisor tb_cdr_ctrl tb_txeq_ctrl}"
 
 ( cd "$WORK" && xvlog -sv $SRC $SRCS_EXTRA > "$OUT/xvlog.log" 2>&1 ) \
   || { echo "   compile FAIL"; tail -5 "$OUT/xvlog.log"; exit 3; }

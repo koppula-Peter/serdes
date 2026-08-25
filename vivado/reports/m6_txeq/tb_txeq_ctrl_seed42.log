@@ -1,0 +1,30 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Aug 25 21:20:29 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snap_tb_txeq_ctrl/xsim_script.tcl
+# xsim {snap_tb_txeq_ctrl} -testplusarg SEED=42 -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+TEST 1:                           T01:sweep_done PASS
+TEST 2:                            T01:ok_status PASS
+TEST 3:                        T01:best_is_ideal PASS
+TEST 4:                     T01:early_exit_iters PASS
+TEST 5:                   T01:final_applied_best PASS
+TEST 6:                              T02:done_ok PASS
+TEST 7:                 T02:best_first_candidate PASS
+TEST 8:                     T02:full_sweep_iters PASS
+TEST 9:                 T03:writes_within_bounds PASS
+TEST 10:                             T04:done_err PASS
+TEST 11:                  T04:rolled_back_initial PASS
+----------------------------------------------
+REGRESSION_RESULT PASS (11 checks)
+$finish called at time : 5545 ns : File "/home/peter/Desktop/serdes/verification/tb/tb_txeq_ctrl.sv" Line 110
+exit
+INFO: xsimkernel Simulation Memory Usage: 293840 KB (Peak: 338300 KB), Simulation CPU Usage: 1590 ms
+INFO: [Common 17-206] Exiting xsim at Tue Aug 25 21:20:33 2026...

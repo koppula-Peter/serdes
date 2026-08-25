@@ -47,6 +47,13 @@ All paths relative to repository root.
 | Verilator lint | PASS | tools/lint.sh |
 | Bounded-acquire SVA | PASS | in-run |
 
+## Milestone M6 — TX Pre-Emphasis Control (rtl/tx_eq)
+
+| Gate item | Status | Evidence |
+|---|---|---|
+| xsim unit TB (converge+early-exit, flat-metric fallback, bounds/step coverage, rollback on persistent bus error) | **PASS** — 11 checks × seeds 1/42/2026 | vivado/reports/m6_txeq/*.log |
+| Verilator lint (-Wall) | PASS | tools/lint.sh |
+
 ## Prior milestones
 
 | Item | Status | Evidence |
