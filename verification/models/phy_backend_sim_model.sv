@@ -60,7 +60,11 @@ module phy_backend_sim_model #(
 
   wire do_accept = cmd_valid && cmd_ready;
 
-  assign cmd_ready = rst_n && !pend_v && !rsp_valid;
+  // Always-ready command face: the model keeps at most one scheduled
+  // response, and a newly accepted command CANCELS any orphaned pending
+  // response (engine-abort / lost-ack scenario, mandate §46). Gating
+  // cmd_ready on pending state would let an orphan stall the engine.
+  assign cmd_ready = rst_n;
 
   function automatic logic [DATA_W-1:0] expand_strb(logic [DATA_W/8-1:0] s);
     logic [DATA_W-1:0] m;
@@ -109,7 +113,7 @@ module phy_backend_sim_model #(
         if (inj_timeout_n > 0) begin
           inj_timeout_n--;              // drop on the floor -> engine timeout
         end else begin
-          rnd_lat = lat_min + ($urandom % ((lat_max >= lat_min) ? (lat_max-lat_min+1) : 1));
+          rnd_lat = lat_min + rng_range_m((lat_max >= lat_min) ? (lat_max-lat_min+1) : 1);
 
           if (UNSUPPORTED_EN && (cmd_addr >= UNSUP_BASE)) begin
             pend_v      <= 1'b1;
@@ -142,9 +146,24 @@ module phy_backend_sim_model #(
     end
   end
 
+  // ---------------- deterministic PRNG (xorshift32) ----------------------
+  // Portable across xsim/iverilog/verilator; seeded once from +SEED= so any
+  // run reproduces identical latency sequences for the same seed.
+  integer rng_m = 32'h1;
+
+  function automatic logic [31:0] rng_next_m();
+    rng_m = rng_m ^ (rng_m << 13);
+    rng_m = rng_m ^ (rng_m >> 17);
+    rng_m = rng_m ^ (rng_m << 5);
+    return rng_m;
+  endfunction
+
+  function automatic int unsigned rng_range_m(input int unsigned n);
+    return (n == 0) ? 0 : (rng_next_m() % n);
+  endfunction
+
   initial begin : init_seed
-    integer seed;
-    if (!$value$plusargs("SEED=%d", seed)) seed = 1;
-    void'($urandom(seed));
+    if (!$value$plusargs("SEED=%d", rng_m)) rng_m = 32'h1;
+    if (rng_m == 0) rng_m = 32'h1;
   end
 endmodule

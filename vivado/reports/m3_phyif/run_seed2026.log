@@ -1,0 +1,129 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Aug 25 18:55:26 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_m3/xsim_script.tcl
+# xsim {tb_m3} -testplusarg SEED=2026 -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+[TB] phy_xact_engine regression start, SEED=2026
+TEST 1:                      T01a:idle_no_spurious_cmd PASS
+TEST 2:                          T01a:counters_cleared PASS
+TEST 3:                          T01a:no_fault_records PASS
+TEST 4:                       T01b:reset_recovers_idle PASS
+TEST 5:                 T01b:counters_zero_after_reset PASS
+TEST 6:                                   T02:write_ok PASS
+TEST 7:                                   T02:readback PASS
+TEST 8:                                  T02:cnt_total PASS
+TEST 9:                                     T02:cnt_ok PASS
+TEST 10:                                    T02:cnt_err PASS
+TEST 11:                                    T02:cnt_tmo PASS
+TEST 12:                                    T02:cnt_rty PASS
+TEST 13:                              T03:default_value PASS
+TEST 14:                                  T03:cnt_total PASS
+TEST 15:                                     T03:cnt_ok PASS
+TEST 16:                                    T03:cnt_err PASS
+TEST 17:                                    T03:cnt_tmo PASS
+TEST 18:                                    T03:cnt_rty PASS
+TEST 19:                                 T04:rmw_status PASS
+TEST 20:                                  T04:rmw_merge PASS
+TEST 21:                               T04:rmw_readback PASS
+TEST 22:                                  T04:cnt_total PASS
+TEST 23:                                     T04:cnt_ok PASS
+TEST 24:                                    T04:cnt_err PASS
+TEST 25:                                    T04:cnt_tmo PASS
+TEST 26:                                    T04:cnt_rty PASS
+TEST 27:                        T04b:verify_fail_status PASS
+TEST 28:                              T04b:fault_record PASS
+TEST 29:                               T04b:err_counted PASS
+TEST 30:                               T04b:fault_clear PASS
+TEST 31:                               T05:b2b_10_xacts PASS
+TEST 32:                                  T05:cnt_total PASS
+TEST 33:                                     T05:cnt_ok PASS
+TEST 34:                                    T05:cnt_err PASS
+TEST 35:                                    T05:cnt_tmo PASS
+TEST 36:                                    T05:cnt_rty PASS
+TEST 37:                          T06a:rr_rotation_fair PASS
+TEST 38:                                 T06a:cnt_total PASS
+TEST 39:                                    T06a:cnt_ok PASS
+TEST 40:                                   T06a:cnt_err PASS
+TEST 41:                                   T06a:cnt_tmo PASS
+TEST 42:                                   T06a:cnt_rty PASS
+TEST 43:                   T06b:no_service_while_locked PASS
+TEST 44:                     T06b:post_unlock_order_301 PASS
+TEST 45:                                 T06b:cnt_total PASS
+TEST 46:                                    T06b:cnt_ok PASS
+TEST 47:                                   T06b:cnt_err PASS
+TEST 48:                                   T06b:cnt_tmo PASS
+TEST 49:                                   T06b:cnt_rty PASS
+TEST 50:                             T07:retry_final_ok PASS
+TEST 51:                                  T07:one_retry PASS
+TEST 52:                                    T07:one_tmo PASS
+TEST 53:                                  T07:cnt_total PASS
+TEST 54:                                     T07:cnt_ok PASS
+TEST 55:                                    T07:cnt_err PASS
+TEST 56:                                    T07:cnt_tmo PASS
+TEST 57:                                    T07:cnt_rty PASS
+TEST 58:                              T08:final_timeout PASS
+TEST 59:                              T08:tmo_attempts3 PASS
+TEST 60:                             T08:first_v_last_v PASS
+TEST 61:                               T08:first_fields PASS
+TEST 62:                                T08:last_fields PASS
+TEST 63:                                  T08:recovered PASS
+TEST 64:                             T08:records_sticky PASS
+TEST 65:                                  T08:cnt_total PASS
+TEST 66:                                     T08:cnt_ok PASS
+TEST 67:                                    T08:cnt_err PASS
+TEST 68:                                    T08:cnt_tmo PASS
+TEST 69:                                    T08:cnt_rty PASS
+TEST 70:                           T09:buserr_recovered PASS
+TEST 71:                                  T09:cnt_total PASS
+TEST 72:                                     T09:cnt_ok PASS
+TEST 73:                                    T09:cnt_err PASS
+TEST 74:                                    T09:cnt_tmo PASS
+TEST 75:                                    T09:cnt_rty PASS
+TEST 76:                        T09b:unsupported_status PASS
+TEST 77:                            T09b:no_side_effect PASS
+TEST 78:                                 T09b:cnt_total PASS
+TEST 79:                                    T09b:cnt_ok PASS
+TEST 80:                                   T09b:cnt_err PASS
+TEST 81:                                   T09b:cnt_tmo PASS
+TEST 82:                                   T09b:cnt_rty PASS
+TEST 83:                             T10:aborted_status PASS
+TEST 84:                               T10:bounded_exit PASS
+TEST 85:                        T10:healthy_after_abort PASS
+TEST 86:                                  T10:cnt_total PASS
+TEST 87:                                     T10:cnt_ok PASS
+TEST 88:                                    T10:cnt_err PASS
+TEST 89:                                    T10:cnt_tmo PASS
+TEST 90:                                    T10:cnt_rty PASS
+TEST 91:                                    T11:both_ok PASS
+TEST 92:                                  T11:cnt_total PASS
+TEST 93:                                     T11:cnt_ok PASS
+TEST 94:                                    T11:cnt_err PASS
+TEST 95:                                    T11:cnt_tmo PASS
+TEST 96:                                    T11:cnt_rty PASS
+TEST 97:                        T12:scoreboard_complete PASS
+TEST 98:                                  T12:cnt_total PASS
+TEST 99:                                     T12:cnt_ok PASS
+TEST 100:                                    T12:cnt_err PASS
+TEST 101:                                    T12:cnt_tmo PASS
+TEST 102:                                    T12:cnt_rty PASS
+TEST 103:                                T13:total_split PASS
+TEST 104:                                  T13:exp_match PASS
+----------------------------------------------
+COVERAGE states_seen   = 00001111 (IDLE,ISSUE,WAIT,RDEL)
+COVERAGE statuses_seen = OK=1 TMO=1 BUSERR=1 ABRT=1 UNSUP=1 VFYFAIL=1
+COVERAGE ops_seen (backend face; core decomposes RMW) = RD=1 WR=1 RMW=0
+COVERAGE model_accepted=294 responses=283
+----------------------------------------------
+REGRESSION_RESULT PASS (104 checks)
+$finish called at time : 42905 ns : File "/home/peter/Desktop/serdes/verification/tb/tb_phy_xact_engine.sv" Line 700
+exit
+INFO: xsimkernel Simulation Memory Usage: 294336 KB (Peak: 338796 KB), Simulation CPU Usage: 2550 ms
+INFO: [Common 17-206] Exiting xsim at Tue Aug 25 18:55:39 2026...

@@ -140,9 +140,13 @@ module phy_xact_core #(
   assign accept_ready = (state_q == S_IDLE);
   assign timer_zero   = (timer_q == '0);
 
+  // Backend opcode: decomposed RMW read phase and write-verify phase are
+  // explicit READs; the RMW merge/write phases and plain WRITEs are WRITEs;
+  // a plain READ passes its own opcode through (PHYIF-REQ-001).
   always_comb begin
-    if (vfy_phase_q || rd_phase_q) be_op = PHY_OP_READ;
-    else                           be_op = PHY_OP_WRITE;
+    if (rd_phase_q || vfy_phase_q)      be_op = PHY_OP_READ;
+    else if (wr_phase_q)                be_op = PHY_OP_WRITE;
+    else                                be_op = op_q;
   end
 
   assign be_cmd_valid = (state_q == S_ISSUE) && !abort_req;
@@ -150,7 +154,11 @@ module phy_xact_core #(
   assign be_wdata     = wdata_q;
   assign be_wstrb     = strb_q;
   assign be_lane      = lane_q;
-  assign be_rsp_ready = (state_q == S_WAIT);
+  // Always-ready response consumer: responses are only produced after a
+  // command handshake, so accepting them in any state is safe. This makes
+  // the engine tolerate orphaned/late responses after abort or retry
+  // instead of stalling the backend (PHYIF-REQ-004, mandate §46).
+  assign be_rsp_ready = 1'b1;
 
   assign x_done    = done_q;
   assign x_status  = status_q;
