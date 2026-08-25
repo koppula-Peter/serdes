@@ -115,19 +115,6 @@ module tb_serdes_supervisor;
     end
   end
 
-  logic [4:0] dbg_prev = 'x;
-  always @(posedge clk) begin
-    if (rst_n && dut.state_q !== dbg_prev) begin
-      $display("[SUP %0t] st=%0d rsn=%0d tmo=%0d", $time, dut.state_q,
-               fail_reason, cr_tmo);
-      dbg_prev <= dut.state_q;
-    end
-  end
-
-  always @(posedge clk) begin
-    if (rst_n && dut.cmd_phase_q == 2'd2 && rsp_done)
-      $display("[RSP %0t] st=%0d rd=%h", $time, rsp_status, rsp_rdata);
-  end
 
   // ------------------------------------------------------------------ helpers
   task automatic pulse_start();
@@ -174,29 +161,23 @@ module tb_serdes_supervisor;
     begin
       int seen_up, seen_initdone;
       seen_up = 0; seen_initdone = 0;
-      fork
-        begin
-          forever begin
-            @(posedge clk);
-            if (ev_link_up)    seen_up++;
-            if (ev_init_done)  seen_initdone++;
-            if (dut.state_q == S_READY) break;
-          end
-        end
-        begin
-          pulse_start();
-          repeat (3) @(negedge clk);
-          pll_lock <= 1'b1;
-          cdr_lock <= 1'b1;
-        end
-      join
-      check("T01:init_reaches_LINK_READY", dut.state_q == S_READY);
+      fork : fork_t01_ev
+        forever @(posedge dut.ev_link_up)   seen_up++;
+        forever @(posedge dut.ev_init_done) seen_initdone++;
+      join_none
+      pulse_start();
+      repeat (3) @(negedge clk);
+      pll_lock <= 1'b1;
+      cdr_lock <= 1'b1;
+      wait (dut.state_q == S_MON);
+      repeat (3) @(negedge clk);
+      disable fork_t01_ev;
+      check("T01:init_reaches_MONITOR",  dut.state_q == S_MON);
       check("T01:ev_link_up",    seen_up       == 1);
       check("T01:ev_init_done",  seen_initdone == 1);
       check("T01:link_up_o",     link_up == 1'b1);
       check("T01:phy_reset_released", phy_reset_n == 1'b1);
       check("T01:no_faults",     c_faults == 0);
-      // monitor health read completes and stays in MONITOR
       repeat (200) @(posedge clk);
       check("T01:stable_MONITOR", dut.state_q == S_MON && link_up);
     end
@@ -250,6 +231,12 @@ module tb_serdes_supervisor;
 
     // ---------------- T06: link loss -> recovery -> retrain exhaustion --
     begin
+      int seen_down, seen_up2;
+      seen_down = 0; seen_up2 = 0;
+      fork : fork_tmp_fork_t06
+        forever @(posedge dut.ev_link_down) seen_down++;
+        forever @(posedge dut.ev_link_up)   seen_up2++;
+      join_none
       clean_slate();
       restorer_en = 1'b1;
       pulse_start();
@@ -263,8 +250,8 @@ module tb_serdes_supervisor;
       wait_state(S_MON, 6000);                            // back in service
       check("T06:recovered_once", c_retr == 1);
       check("T06:link_restored",  link_up == 1'b1);
-      check("T06:down_then_up_events",
-            dut.ev_link_down == 1'b0 && dut.ev_link_up == 1'b0); // pulses consumed
+      check("T06:down_and_second_up_seen",
+            seen_down >= 1 && seen_up2 >= 2);
       // second loss exhausts RETRAIN_MAX=1 -> FAULT(RETR_EXH) -> SAFE
       @(negedge clk); cdr_lock <= 1'b0;
       restorer_en = 1'b0;
@@ -272,10 +259,12 @@ module tb_serdes_supervisor;
       check("T06:reason_RETR_EXH", fail_reason == 3'd6);
       check("T06:retrain_budget",  c_retr == 1);
       check("T06:two_faults_total", c_faults == 1);
+      disable fork_tmp_fork_t06;
     end
 
     // ---------------- T07: restart from SAFE_STATE ----------------------
     begin
+      cdr_lock <= 1'b1;
       pulse_start();                                      // fresh full init
       repeat (3) @(negedge clk);
       pll_lock <= 1'b1; cdr_lock <= 1'b1;

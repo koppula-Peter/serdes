@@ -136,6 +136,7 @@ module serdes_supervisor #(
   logic [DATA_W-1:0]    cmd_wdata;
   logic [1:0]           cmd_phase_q;            // 0 idle | 1 issue | 2 wait
   logic                 cmd_done;
+  logic                 cmd_res_q;              // results valid one cycle after done
   logic [2:0]           cmd_st_q;
   logic [DATA_W-1:0]    cmd_rd_q;
 
@@ -196,9 +197,10 @@ module serdes_supervisor #(
               end
         default: cmd_phase_q <= 2'd0;
       endcase
+      cmd_res_q <= (cmd_phase_q == 2'd2) && rsp_done;
     end
   end
-  assign cmd_done = (cmd_phase_q == 2'd2) && rsp_done;
+  assign cmd_done = cmd_res_q;
 
   always_comb begin
     cr_valid       = (cmd_phase_q == 2'd1);
@@ -424,9 +426,11 @@ module serdes_supervisor #(
       SUP_SAFE_STATE: begin
         tmr_en = 1'b0;
         if (start_edge) begin
+          // fresh full init: jump straight into the sequence carrying its own
+          // timer (a second start edge inside RESET would be lost otherwise)
           clr_init   = 1'b1;
           tmr_load   = 1'b1; tmr_val = TIMEOUT_W'(PWR_WAIT_CYC);
-          state_d    = SUP_RESET;
+          state_d    = SUP_POWER_WAIT;
         end
       end
 
@@ -491,16 +495,19 @@ module serdes_supervisor #(
       if (state_q != SUP_FAULT && state_d == SUP_FAULT) begin
         ev_fault      <= 1'b1;
         c_fault_q     <= sat_inc(c_fault_q);
-        fail_reason_o <= reason_q;
+        fail_reason_o <= (reason_wr ? reason_val : reason_q);
         fail_state_o  <= state_q;
       end
 
       if (state_q != SUP_SAFE_STATE && state_d == SUP_SAFE_STATE)
         ev_safe <= 1'b1;
 
-      // leaving FAULT clears latched reason source
-      if (state_q == SUP_SAFE_STATE && state_d == SUP_RESET)
-        reason_q <= RSN_NONE;
+      // leaving SAFE on a fresh start: clear reason source and retrain budgets
+      if (state_q == SUP_SAFE_STATE && state_d == SUP_POWER_WAIT) begin
+        reason_q  <= RSN_NONE;
+        c_retr_q  <= '0;
+        c_reacq_q <= '0;
+      end
     end
   end
 

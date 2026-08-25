@@ -43,22 +43,30 @@ source "$VIVADO_SETTINGS" >/dev/null 2>&1 || { echo "cannot source $VIVADO_SETTI
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 SRC="$ROOT/rtl/common/serdes_phy_ctrl_pkg.sv \
-  $ROOT/rtl/phy_if/phy_arbiter.sv \
-  $ROOT/rtl/phy_if/phy_xact_core.sv \
+  $ROOT/rtl/phy_if/phy_arbiter.sv   $ROOT/rtl/phy_if/phy_xact_core.sv \
   $ROOT/rtl/phy_if/phy_xact_engine_top.sv \
+  $ROOT/rtl/serdes_ctrl/serdes_supervisor.sv \
+  $ROOT/rtl/cdr_ctrl/cdr_ctrl.sv \
   $ROOT/verification/models/phy_backend_sim_model.sv \
-  $ROOT/verification/tb/tb_phy_xact_engine.sv"
+  $ROOT/verification/tb/tb_phy_xact_engine.sv \
+  $ROOT/verification/tb/tb_serdes_supervisor.sv \
+  $ROOT/verification/tb/tb_cdr_ctrl.sv"
+SRCS_EXTRA=""
 
-( cd "$WORK" \
-  && xvlog -sv $SRC        > "$OUT/xvlog.log" 2>&1 \
-  && xelab tb_phy_xact_engine -s tb_gate -debug typical -timescale 1ns/1ps \
-                           > "$OUT/xelab.log" 2>&1 ) || { echo "   compile/elab FAIL"; exit 3; }
+TBS="${TBS:-tb_phy_xact_engine tb_serdes_supervisor}"
 
-for sd in $SEEDS; do
-  ( cd "$WORK" && xsim tb_gate -R -testplusarg "SEED=$sd" ) > "$OUT/run_seed$sd.log" 2>&1
-  res=$(grep -o 'REGRESSION_RESULT .*' "$OUT/run_seed$sd.log" || true)
-  echo "   seed=$sd => ${res:-NO-RESULT}"
-  [[ "$res" == *"PASS"* ]] || fail=1
+( cd "$WORK" && xvlog -sv $SRC $SRCS_EXTRA > "$OUT/xvlog.log" 2>&1 ) \
+  || { echo "   compile FAIL"; tail -5 "$OUT/xvlog.log"; exit 3; }
+
+for tb in $TBS; do
+  ( cd "$WORK" && xelab $tb -s "snap_$tb" -debug typical -timescale 1ns/1ps \
+      > "$OUT/xelab_$tb.log" 2>&1 ) || { echo "   elab FAIL: $tb"; tail -5 "$OUT/xelab_$tb.log"; exit 3; }
+  for sd in $SEEDS; do
+    ( cd "$WORK" && xsim "snap_$tb" -R -testplusarg "SEED=$sd" ) > "$OUT/${tb}_seed$sd.log" 2>&1
+    res=$(grep -o 'REGRESSION_RESULT .*' "$OUT/${tb}_seed$sd.log" || true)
+    echo "   $tb seed=$sd => ${res:-NO-RESULT}"
+    [[ "$res" == *"PASS"* ]] || fail=1
+  done
 done
 
 echo "== [3/3] summary =="
